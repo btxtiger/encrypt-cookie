@@ -2,7 +2,7 @@
   "name": "encrypt-cookie",
   "author": "Jonas Gnioui <btxtiger@outlook.com>",
   "license": "MIT",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Node module for encrypted cookies, can be used as middleware for express/socket.io or manually.",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",

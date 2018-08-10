@@ -53,13 +53,13 @@ this.socketServer.use(decryptCookieSocketMiddleware(signatureSecret, encryptionS
 
 
 ```
-#### Set cookie with socket.io
+### Set cookie with socket.io
 The new cookie value only remains in the current handshake. 
 It will not be submitted to the browsers cookie cache. The value will be deleted
 when the handshake is recreated.
 
 `cookieOptions` will be mostly ignored, because the socked does not include any meta
-information about the cookies. Currently the only noticed value for   
+information about the cookies. Currently the only noticed value for 
 `cookieOptions` is `{sign: true}` to sign the cookie.
 ```ts
 import { setSocketCookie } from 'encrypt-cookie';
