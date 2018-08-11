@@ -1,12 +1,12 @@
-import crypto, { CipherGCM, CipherGCMTypes, DecipherGCM } from 'crypto';
-import { Password } from './types';
-
 /**
  *  Cryptography Functions
  *
  *  Forked from AndiDittrich/AesUtil.js
  *  https://gist.github.com/AndiDittrich/4629e7db04819244e843
  */
+
+import crypto, { CipherGCM, CipherGCMTypes, DecipherGCM } from 'crypto';
+import { Password } from './types';
 
 /**
  * Get encryption/decryption algorithm
@@ -15,6 +15,9 @@ function getAlgorithm(): CipherGCMTypes {
    return 'aes-256-gcm';
 }
 
+/**
+ * Get encrypted string prefix
+ */
 function getEncryptedPrefix(): string {
    return 'enc::';
 }
@@ -88,9 +91,10 @@ export function decryptAesGcm(cipherText: string, password: Password): string | 
 
       const cipherTextParts = cipherText.split(getEncryptedPrefix());
 
-      // If is not encrypted cookie
+      // If it's not encrypted by this, reject with undefined
       if (cipherTextParts.length !== 2) {
-         return cipherText;
+         console.error('Could not determine the beginning of the cipherText. Maybe not encrypted by this method.');
+         return void 0;
       } else {
          cipherText = cipherTextParts[1];
       }

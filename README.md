@@ -48,7 +48,7 @@ import socketIO from 'socket.io';
 import { decryptCookieSocketMiddleware } from 'encrypt-cookie';
 
 this.httpServer = http.createServer(this.expressApp);
-this.socketServer = socketIO(this.httpServer); // often used as `this.io
+this.socketServer = socketIO(this.httpServer); // often defined as `io`
 this.socketServer.use(decryptCookieSocketMiddleware(signatureSecret, encryptionSecret));
 
 
