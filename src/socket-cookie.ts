@@ -39,7 +39,7 @@ export function setSocketCookie(
       delete oldCookies[cookieName];
    }
 
-   // Build new cookies header
+   // Build new cookie header
    const newCookies = [];
 
    // Add our cookie

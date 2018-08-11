@@ -93,7 +93,7 @@ export function decryptAesGcm(cipherText: string, password: Password): string | 
 
       // If it's not encrypted by this, reject with undefined
       if (cipherTextParts.length !== 2) {
-         console.error('Could not determine the beginning of the cipherText. Maybe not encrypted by this method.');
+         // console.warn('Could not determine the beginning of the cipherText. Maybe not encrypted by this method.');
          return void 0;
       } else {
          cipherText = cipherTextParts[1];
